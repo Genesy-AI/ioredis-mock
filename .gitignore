@@ -14,3 +14,4 @@ browser.js.map
 .DS_Store
 dump.rdb
 appendonlydir
+.npmrc
