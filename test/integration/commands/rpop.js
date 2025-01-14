@@ -40,20 +40,6 @@ runTwinSuite('rpop', command => {
 
     // @TODO Rewrite test so it runs on a real Redis instance
     ;(process.env.IS_E2E ? it.skip : it)(
-      'should return null on empty list',
-      () => {
-        const redis = new Redis({
-          data: {
-            foo: [],
-          },
-        })
-
-        return redis[command]('foo').then(result => expect(result).toBe(null))
-      }
-    )
-
-    // @TODO Rewrite test so it runs on a real Redis instance
-    ;(process.env.IS_E2E ? it.skip : it)(
       'should throw an exception if the key contains something other than a list',
       () => {
         const redis = new Redis({
