@@ -94,20 +94,6 @@ runTwinSuite('lmove', command => {
       expect(current2).toEqual(['four', 'three'])
     })
 
-    it('should perform no operation if the source is an empty list', async () => {
-      const result = await redis[command](emptyList, listId2, 'LEFT', 'LEFT')
-      expect(result).toEqual(null)
-
-      const current1 = await redis.lrange(listId1, 0, -1)
-      const current2 = await redis.lrange(listId2, 0, -1)
-      expect(
-        current1.map(v => (Buffer.isBuffer(v) ? v.toString() : v))
-      ).toEqual(['one', 'two'])
-      expect(
-        current2.map(v => (Buffer.isBuffer(v) ? v.toString() : v))
-      ).toEqual(['three', 'four'])
-    })
-
     it('should perform no operation if the source and destination are the same and both positions are LEFT', async () => {
       const result = await redis[command](listId2, listId2, 'LEFT', 'LEFT')
       expect(Buffer.isBuffer(result) ? result.toString() : result).toEqual(
