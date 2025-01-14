@@ -24,11 +24,11 @@
   ],
   "homepage": "https://github.com/stipsan/ioredis-mock#readme",
   "bugs": {
-    "url": "https://github.com/stipsan/ioredis-mock/issues"
+    "url": "https://github.com/Genesy-AI/ioredis-mock/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stipsan/ioredis-mock.git"
+    "url": "git+https://github.com/Genesy-AI/ioredis-mock.git"
   },
   "license": "MIT",
   "author": "Cody Olsen <stipsan@gmail.com>",
