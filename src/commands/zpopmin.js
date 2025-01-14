@@ -19,7 +19,11 @@ export function zpopmin(key, count = 1) {
   ordered.forEach(it => {
     map.delete(it.value)
   })
-  this.data.set(key, map)
+  if (map.size > 0) {
+    this.data.set(key, map)
+  } else {
+    this.data.delete(key)
+  }
 
   return ordered.flatMap(it => [it.value, it.score])
 }
