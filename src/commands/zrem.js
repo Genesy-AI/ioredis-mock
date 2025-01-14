@@ -9,7 +9,11 @@ export function zrem(key, ...vals) {
     }
   })
 
-  this.data.set(key, map)
+  if (map.size > 0) {
+    this.data.set(key, map)
+  } else {
+    this.data.delete(key)
+  }
   return removed
 }
 
